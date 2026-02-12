@@ -1,62 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Our Little Story 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="timestyle.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Photo Book 💖</title>
+<link rel="stylesheet" href="timestyle.css">
 </head>
+
 <body>
 
-<!-- Surprise Intro -->
-<div class="intro-screen" id="intro">
+<!-- Intro Screen -->
+<div class="intro" id="intro">
   <h1>Here’s a little surprise for you 💌</h1>
-  <button onclick="enterSite()">Open It 💖</button>
+  <button onclick="openBook()">Open It 💖</button>
 </div>
 
-<div class="container">
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9e4e0e.mp3?filename=romantic-background-11069.mp3" type="audio/mpeg">
+</audio>
 
-  <h1 class="main-title">Our Mini Photo Book 📖💞</h1>
+<!-- Book Wrapper -->
+<div class="book-wrapper" id="bookWrapper">
 
-  <!-- Timeline Item -->
-  <div class="timeline-item" onclick="toggleItem(this)">
-    <h2>First Meet 💕</h2>
-    <div class="hidden-content">
-      <div class="photo-card">
+  <div class="book">
+
+    <!-- Page 1 -->
+    <div class="page">
+      <div class="front">
+        <h2>First Meet 💕</h2>
         <img src="firstmeet.JPG">
         <p>This was the moment everything started 🥹✨</p>
+        <span class="page-number">1</span>
       </div>
     </div>
-  </div>
 
-  <div class="timeline-item" onclick="toggleItem(this)">
-    <h2>First Talk 💌</h2>
-    <div class="hidden-content">
-      <div class="photo-card">
+    <!-- Page 2 -->
+    <div class="page">
+      <div class="front">
+        <h2>First Talk 💌</h2>
         <img src="firsttalk.JPG">
         <p>One conversation changed everything 💗</p>
+        <span class="page-number">2</span>
       </div>
     </div>
-  </div>
 
-  <div class="timeline-item" onclick="toggleItem(this)">
-    <h2>Best Memory 🌸</h2>
-    <div class="hidden-content">
-      <div class="photo-card">
+    <!-- Page 3 -->
+    <div class="page">
+      <div class="front">
+        <h2>Best Memory 🌸</h2>
         <img src="bestmemory.JPG">
         <p>This day will always be my favorite 🫶</p>
+        <span class="page-number">3</span>
       </div>
     </div>
-  </div>
 
-  <div class="timeline-item" onclick="toggleItem(this)">
-    <h2>Today ✨</h2>
-    <div class="hidden-content">
-      <div class="photo-card">
+    <!-- Page 4 -->
+    <div class="page">
+      <div class="front">
+        <h2>Today ✨</h2>
         <img src="today.JPG">
         <p>And we’re still writing our story… 💞</p>
+        <span class="page-number">4</span>
       </div>
     </div>
+
+    <!-- Final Page -->
+    <div class="page">
+      <div class="front last-page">
+        <h1>To Be Continued… 💖</h1>
+        <p>This is only the beginning of us 🌷</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="controls">
+    <button onclick="prevPage()">⬅</button>
+    <button onclick="nextPage()">➡</button>
   </div>
 
 </div>

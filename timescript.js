@@ -1,18 +1,22 @@
-function enterSite() {
+let currentPage = 0;
+const pages = document.querySelectorAll(".page");
+
+function openBook() {
   document.getElementById("intro").style.display = "none";
+  document.getElementById("bookWrapper").style.display = "block";
+  document.getElementById("bgMusic").play();
 }
 
-function toggleItem(element) {
-  element.classList.toggle("active");
+function nextPage() {
+  if (currentPage < pages.length) {
+    pages[currentPage].style.transform = "rotateY(-180deg)";
+    currentPage++;
+  }
 }
 
-/* Floating Hearts */
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.innerHTML = "💖";
-  heart.classList.add("heart");
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 4000);
-}, 1500);
+function prevPage() {
+  if (currentPage > 0) {
+    currentPage--;
+    pages[currentPage].style.transform = "rotateY(0deg)";
+  }
+}
