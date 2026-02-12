@@ -6,19 +6,8 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #ffd6eb, #ffe6f5);
+  background: linear-gradient(to bottom, #ffe0ec, #ffd6eb);
   overflow-x: hidden;
-}
-
-/* Progress Bar */
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  background: #ff4d94;
-  width: 0%;
-  z-index: 1000;
 }
 
 /* Intro Screen */
@@ -26,7 +15,7 @@ body {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, #ffb3d9, #ffd6eb);
+  background: linear-gradient(to bottom, #ffb6d9, #ffd6eb);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,25 +25,30 @@ body {
 }
 
 .intro-screen h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: white;
+  margin-bottom: 20px;
 }
 
 .intro-screen button {
-  margin-top: 20px;
   padding: 12px 25px;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   background: white;
   color: #ff4d94;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-screen button:hover {
+  transform: scale(1.05);
 }
 
 /* Container */
 .container {
   padding: 80px 20px;
-  max-width: 600px;
+  max-width: 500px;
   margin: auto;
 }
 
@@ -64,28 +58,20 @@ body {
   color: #ff3385;
 }
 
-/* Timeline */
+/* Timeline Items */
 .timeline-item {
-  position: relative;
-  margin-bottom: 40px;
-  padding-left: 30px;
+  margin-bottom: 35px;
   cursor: pointer;
+  text-align: center;
 }
 
-.timeline-item .dot {
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 15px;
-  height: 15px;
-  background: #ff4d94;
-  border-radius: 50%;
-}
-
-.content h2 {
+.timeline-item h2 {
   color: #ff3385;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
+/* Hidden Content */
 .hidden-content {
   max-height: 0;
   overflow: hidden;
@@ -93,18 +79,32 @@ body {
 }
 
 .timeline-item.active .hidden-content {
-  max-height: 600px;
-  margin-top: 15px;
+  max-height: 800px;
 }
 
-.hidden-content img {
+/* Photo Card (Mini Photo Book Style) */
+.photo-card {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+/* SAME SIZE IMAGES */
+.photo-card img {
   width: 100%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 12px;
-  margin: 10px 0;
 }
 
-.hidden-content p {
+/* Bigger Text */
+.photo-card p {
+  font-size: 1rem;
+  margin-top: 10px;
   color: #444;
+  font-weight: 500;
 }
 
 /* Floating Hearts */
